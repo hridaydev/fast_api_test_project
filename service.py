@@ -8,7 +8,7 @@ class UserService:
     def __init__(self):
         self.user_repository = UserRepository()
 
-    def create_user(
+    def create_for_new_student(
         self,
         db: Session,
         user_payload: UserCreateRequest):
@@ -26,7 +26,7 @@ class UserService:
             age=user_payload.age
         )
         
-        return self.user_repository.create_user(db, user)
+        return self.user_repository.create_for_new_student(db, user)
     
     def get_all_users(self,db:Session):
         return self.user_repository.get_all_user(db)

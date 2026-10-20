@@ -4,7 +4,7 @@ from user import User
 
 
 class UserRepository:
-    def create_user(self,db: Session,user_payload:User):
+    def create_for_new_student(self,db: Session,user_payload:User):
         db.add(user_payload)
         db.commit()
         
