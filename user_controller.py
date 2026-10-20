@@ -9,7 +9,7 @@ router=APIRouter(
 )
 
 
-@router.post("/create",status_code=status.HTTP_201_CREATED)
+@router.post("/create",status_code=status.HTTP_201_CREATED, description="Endpoint to create user")
 def create_user(payload:UserCreateRequest, db: Session=Depends(get_db)):
     service=UserService()
     service.create_user(db,payload)
